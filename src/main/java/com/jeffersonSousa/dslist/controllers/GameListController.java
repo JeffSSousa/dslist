@@ -14,15 +14,15 @@ import com.jeffersonSousa.dslist.services.GameListService;
 import com.jeffersonSousa.dslist.services.GameService;
 
 @RestController
-@RequestMapping (value = "/lists")
+@RequestMapping(value = "/lists")
 public class GameListController {
 
 	@Autowired
 	private GameListService gameListService;
-	
+
 	@Autowired
 	private GameService gameService;
-	
+
 	@GetMapping
 	public List<GameListDTO> findAll() {
 		List<GameListDTO> result = gameListService.findAll();
@@ -34,5 +34,5 @@ public class GameListController {
 		List<GameMinDTO> result = gameService.findByList(listId);
 		return result;
 	}
-	
+
 }
